@@ -1,0 +1,24 @@
+We are going to use the  gridfs spec of mongodb to store and retreive the files such as images, audio and video files in the mongodb.
+The files will be stored as files and chunk where metadata stored in files and chunks.
+reference method used to link the chunck and file using Object_id.
+Object_id of file will be refered in the chunk documnent.
+
+Adding a file in GridFS
+-----------------------------
+simple and manual way.
+*************************
+1. open cmd prompt in "C:\Program Files\MongoDB\Server\4.0\bin";
+
+2. navigate to the mongofiles.exe and enter the following command.
+mongofiles.exe -d gridfs put "file.extension"
+-gridfs will be created as a collection if there is no collection and the file will be stored in that.
+
+3. If the operation is successful , will display the follwing message.
+2020-05-29T10:51:21.931+0530    connected to: localhost
+2020-05-29T10:51:21.942+0530    added file: mongod.cfg
+
+4. Check in shell.
+a. mongo
+b. use gridfs
+c. db.fs.files.find().pretty();
+b. use gridfs.
